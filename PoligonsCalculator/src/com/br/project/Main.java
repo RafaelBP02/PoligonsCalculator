@@ -1,5 +1,7 @@
 package com.br.project;
 
+import com.br.project.Triangle.TriTypes;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -9,6 +11,12 @@ public class Main {
 		mySquare.calcArea();
 		
 		mySquare.calcPerimeter();
+		
+		Triangle myTriangle = new Triangle(10, 50, TriTypes.RIGHT);
+		
+		myTriangle.calcArea();
+		
+		myTriangle.calcPerimeter();
 		
 	}
 
