@@ -18,7 +18,7 @@ public class Quadrilateral extends Poligon{
 		}
 		
 		super.setArea(this.heigth * this.base);
-		System.out.println("Quadrado possui area de: " + getArea() + " m2");
+		System.out.println("Quadrilateral area = " + getArea() + " m2");
 	}
 	
 	@Override
@@ -29,7 +29,7 @@ public class Quadrilateral extends Poligon{
 		}
 		
 		super.setPerimeter(this.heigth*2 + this.base*2);
-		System.out.println("Quadrado possui perimetro de: " + getPerimeter() + " m");
+		System.out.println("Qudrilateral perimeter = " + getPerimeter() + " m");
 	}
 	
 }
