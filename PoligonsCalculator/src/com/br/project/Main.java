@@ -23,7 +23,9 @@ public class Main {
 		
 		}
 		
-		System.out.println("Exiting program...");		
+		System.out.println("Exiting program...");
+		System.out.println("Thanks for using this calculator");
+		
 	}
 
 }

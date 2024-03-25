@@ -41,10 +41,16 @@ public class CalculatorConfig {
 		case 2:
 			
 			readBaseHeigthInput();
-			if(this.baseRead<0 || this.heigthRead<0)
-				throw new RuntimeException("PLEASE TYPE IN ONLY POSITIVE NUMBERS\n");
+			if(this.baseRead<0 || this.heigthRead<0) {
+				throw new RuntimeException("Error: PLEASE TYPE IN ONLY POSITIVE NUMBERS\n");
+			}
+			TriTypes triangleRead = triangleTypeRead();
+			
+			if(triangleRead == null) {
+				throw new RuntimeException("Error: INVALID TRIANGLE TYPE\n");
+			}
 			else {
-				Triangle myTriangle = new Triangle(this.heigthRead, this.baseRead, TriTypes.RIGHT);
+				Triangle myTriangle = new Triangle(this.heigthRead, this.baseRead, triangleRead);
 				
 				myTriangle.calcArea();
 				myTriangle.calcPerimeter();
@@ -62,8 +68,30 @@ public class CalculatorConfig {
 		}
 	}
 	
+
 	public boolean getTurnOnOff(){
 		return turnOnOff;
+	}
+	
+	private TriTypes triangleTypeRead() {
+		System.out.println("Please select the triangle type to operate in");
+		System.out.println("(1)ISOSCELES, (2)RIGHT, (3)EQUILATERAL, (4)SCALENE;");
+		
+		Scanner in = new Scanner(System.in);
+		int option = in.nextInt();
+		
+		if(option == 1)
+			return TriTypes.ISOSCELES;
+		else if(option == 2)
+			return TriTypes.RIGHT;
+		else if(option == 3)
+			return TriTypes.EQUILATERAL;
+		else if(option == 4)
+			return TriTypes.SCALENE;
+		else { 
+			System.out.println("ERROR: Invalid option. Please type again");
+			return null;
+		}
 	}
 	
 	private void readBaseHeigthInput() {
