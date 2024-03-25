@@ -1,23 +1,26 @@
 package com.br.project;
 
+import java.util.Scanner;
+
 import com.br.project.Triangle.TriTypes;
 
 public class Main {
 
 	public static void main(String[] args) {
 		
-		Quadrilateral mySquare = new Quadrilateral(10, 15);
+		CalculatorConfig calculator = new CalculatorConfig();
 		
-		mySquare.calcArea();
 		
-		mySquare.calcPerimeter();
+		while(calculator.getTurnOnOff()) {
 		
-		Triangle myTriangle = new Triangle(10, 50, TriTypes.RIGHT);
+			calculator.calculatorStart();
+			
+			Scanner in = new Scanner(System.in);
+			
+			calculator.calculatorMode(in.nextInt());
+		}
 		
-		myTriangle.calcArea();
-		
-		myTriangle.calcPerimeter();
-		
+		System.out.println("Exiting program...");		
 	}
 
 }
