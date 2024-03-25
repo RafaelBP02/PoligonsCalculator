@@ -2,8 +2,6 @@ package com.br.project;
 
 import java.util.Scanner;
 
-import com.br.project.Triangle.TriTypes;
-
 public class Main {
 
 	public static void main(String[] args) {
@@ -17,7 +15,12 @@ public class Main {
 			
 			Scanner in = new Scanner(System.in);
 			
-			calculator.calculatorMode(in.nextInt());
+			try{
+				calculator.calculatorMode(in.nextInt());
+			}catch(Exception e) {
+				System.out.println(e.getMessage());
+			}
+		
 		}
 		
 		System.out.println("Exiting program...");		
